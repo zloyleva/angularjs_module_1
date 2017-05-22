@@ -14,7 +14,7 @@ $scope.messageClass = "";
 
 $scope.checkLunch = function() {
   var lunchItemsArray = $scope.lunchItem.split(',');
-  var cleanArray = lunchItemsArray.filter(function(item){return item;}) // cleaning empty values
+  var cleanArray = lunchItemsArray.filter(function(item){return (item && (+item)!=0 );}) // cleaning empty values
   var lunchItemSum = cleanArray.length; // lenght = 1 - it's maybe empty array!!! Becouse it is not lenght, it's last index+1
 
   console.log(lunchItemSum);
